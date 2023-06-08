@@ -17,7 +17,7 @@ const Login = () => {
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="password" className="block dark:text-gray-400">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-500 focus:dark:border-violet-400" />
                         <div className="flex justify-end text-xs dark:text-gray-400">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
