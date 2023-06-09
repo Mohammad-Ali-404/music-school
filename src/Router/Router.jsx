@@ -4,6 +4,7 @@ import Error from "../Pages/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PopularClass from "../Pages/Home/Home/PopularClass";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         {
             path:'register',
             element:<Register></Register>
+        },
+        {
+          path:'classes',
+          element:<PopularClass></PopularClass>
         }
       ]
     },

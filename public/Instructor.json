@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "name": "John Smith",
+      "instrument": "Piano",
+      "years_of_experience": 12,
+      "email": "john.smith@example.com",
+      "department": "Keyboard",
+      "category": "popular",
+      "image": "https://example.com/images/john_smith.jpg",
+      "classes_taken": 25,
+      "class_name": "Advanced Piano Techniques"
+    },
+    {
+      "id": 2,
+      "name": "Emily Johnson",
+      "instrument": "Violin",
+      "years_of_experience": 8,
+      "email": "emily.johnson@example.com",
+      "department": "Strings",
+      "category": "Junior Teacher",
+      "image": "https://example.com/images/emily_johnson.jpg",
+      "classes_taken": 15,
+      "class_name": "Beginner Violin Ensemble"
+    },
+    {
+      "id": 3,
+      "name": "Michael Davis",
+      "instrument": "Guitar",
+      "years_of_experience": 15,
+      "email": "michael.davis@example.com",
+      "department": "Guitar",
+      "category": "popular",
+      "image": "https://example.com/images/michael_davis.jpg",
+      "classes_taken": 30,
+      "class_name": "Advanced Jazz Guitar"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Thompson",
+      "instrument": "Vocal",
+      "years_of_experience": 6,
+      "email": "sarah.thompson@example.com",
+      "department": "Vocal",
+      "category": "popular",
+      "image": "https://example.com/images/sarah_thompson.jpg",
+      "classes_taken": 20,
+      "class_name": "Pop Singing Techniques"
+    },
+    {
+      "id": 5,
+      "name": "David Lee",
+      "instrument": "Drums",
+      "years_of_experience": 10,
+      "email": "david.lee@example.com",
+      "department": "Percussion",
+      "category": "popular",
+      "image": "https://example.com/images/david_lee.jpg",
+      "classes_taken": 18,
+      "class_name": "Rhythmic Drumming Workshop"
+    },
+    {
+      "id": 6,
+      "name": "Jennifer Miller",
+      "instrument": "Flute",
+      "years_of_experience": 7,
+      "email": "jennifer.miller@example.com",
+      "department": "Woodwinds",
+      "category": "Junior Teacher",
+      "image": "https://example.com/images/jennifer_miller.jpg",
+      "classes_taken": 12,
+      "class_name": "Intermediate Flute Masterclass"
+    },
+    {
+      "id": 7,
+      "name": "Daniel Brown",
+      "instrument": "Saxophone",
+      "years_of_experience": 9,
+      "email": "daniel.brown@example.com",
+      "department": "Woodwinds",
+      "category": "Junior Teacher",
+      "image": "https://example.com/images/daniel_brown.jpg",
+      "classes_taken": 14,
+      "class_name": "Jazz Improvisation for Saxophone"
+    },
+    {
+      "id": 8,
+      "name": "Jessica Wilson",
+      "instrument": "Cello",
+      "years_of_experience": 11,
+      "email": "jessica.wilson@example.com",
+      "department": "Strings",
+      "category": "popular",
+      "image": "https://example.com/images/jessica_wilson.jpg",
+      "classes_taken": 22,
+      "class_name": "Classical Cello Repertoire"
+    },
+    {
+      "id": 9,
+      "name": "Robert Clark",
+      "instrument": "Trumpet",
+      "years_of_experience": 13,
+      "email": "robert.clark@example.com",
+      "department": "Brass",
+      "category": "popular",
+      "image": "https://example.com/images/robert_clark.jpg",
+      "classes_taken": 27,
+      "class_name": "Advanced Trumpet Techniques"
+    },
+    {
+      "id": 10,
+      "name": "Melissa Taylor",
+      "instrument": "Clarinet",
+      "years_of_experience": 5,
+      "email": "melissa.taylor@example.com",
+      "department": "Woodwinds",
+      "category": "Junior Teacher",
+      "image": "https://example.com/images/melissa_taylor.jpg",
+      "classes_taken": 10,
+      "class_name": "Introduction to Clarinet"
+    }
+]

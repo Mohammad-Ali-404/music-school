@@ -1,0 +1,302 @@
+[
+    {
+      "id": 1,
+      "name": "Advanced Piano Techniques",
+      "instrument": "Piano",
+      "teacher": "John Smith",
+      "image": "https://example.com/images/advanced_piano.jpg",
+      "department": "Keyboard",
+      "price": 50,
+      "available_seats": 10
+    },
+    {
+      "id": 2,
+      "name": "Beginner Violin Ensemble",
+      "instrument": "Violin",
+      "teacher": "Emily Johnson",
+      "image": "https://example.com/images/beginner_violin.jpg",
+      "department": "Strings",
+      "price": 40,
+      "available_seats": 5
+    },
+    {
+      "id": 3,
+      "name": "Advanced Jazz Guitar",
+      "instrument": "Guitar",
+      "teacher": "Michael Davis",
+      "image": "https://example.com/images/advanced_guitar.jpg",
+      "department": "Guitar",
+      "price": 55,
+      "available_seats": 8
+    },
+    {
+      "id": 4,
+      "name": "Pop Singing Techniques",
+      "instrument": "Vocal",
+      "teacher": "Sarah Thompson",
+      "image": "https://example.com/images/pop_singing.jpg",
+      "department": "Vocals",
+      "price": 45,
+      "available_seats": 6
+    },
+    {
+      "id": 5,
+      "name": "Rhythmic Drumming Workshop",
+      "instrument": "Drums",
+      "teacher": "David Lee",
+      "image": "https://example.com/images/rhythmic_drumming.jpg",
+      "department": "Percussion",
+      "price": 60,
+      "available_seats": 4
+    },
+    {
+      "id": 6,
+      "name": "Intermediate Flute Masterclass",
+      "instrument": "Flute",
+      "teacher": "Jennifer Miller",
+      "image": "https://example.com/images/intermediate_flute.jpg",
+      "department": "Woodwinds",
+      "price": 45,
+      "available_seats": 7
+    },
+    {
+      "id": 7,
+      "name": "Jazz Improvisation for Saxophone",
+      "instrument": "Saxophone",
+      "teacher": "Daniel Brown",
+      "image": "https://example.com/images/jazz_saxophone.jpg",
+      "department": "Woodwinds",
+      "price": 50,
+      "available_seats": 9
+    },
+    {
+      "id": 8,
+      "name": "Classical Cello Repertoire",
+      "instrument": "Cello",
+      "teacher": "Jessica Wilson",
+      "image": "https://example.com/images/classical_cello.jpg",
+      "department": "Strings",
+      "price": 55,
+      "available_seats": 3
+    },
+    {
+      "id": 9,
+      "name": "Advanced Trumpet Techniques",
+      "instrument": "Trumpet",
+      "teacher": "Robert Clark",
+      "image": "https://example.com/images/advanced_trumpet.jpg",
+      "department": "Brass",
+      "price": 50,
+      "available_seats": 6
+    },
+    {
+      "id": 10,
+      "name": "Introduction to Clarinet",
+      "instrument": "Clarinet",
+      "teacher": "Melissa Taylor",
+      "image": "https://example.com/images/intro_clarinet.jpg",
+      "department": "Woodwinds",
+      "price": 40,
+      "available_seats": 5
+    },
+    {
+      "id": 11,
+      "name": "Beginner Piano for Kids",
+      "instrument": "Piano",
+      "teacher": "Emma Davis",
+      "image": "https://example.com/images/beginner_piano.jpg",
+      "department": "Keyboard",
+      "price": 35,
+      "available_seats": 12
+    },
+    {
+      "id": 12,
+      "name": "Intermediate Violin Techniques",
+      "instrument": "Violin",
+      "teacher": "Andrew Wilson",
+      "image": "https://example.com/images/intermediate_violin.jpg",
+      "department": "Strings",
+      "price": 45,
+      "available_seats": 6
+    },
+    {
+      "id": 13,
+      "name": "Fingerstyle Guitar Masterclass",
+      "instrument": "Guitar",
+      "teacher": "Benjamin Thompson",
+      "image": "https://example.com/images/fingerstyle_guitar.jpg",
+      "department": "Guitar",
+      "price": 55,
+      "available_seats": 5
+    },
+    {
+      "id": 14,
+      "name": "Soulful Singing Workshop",
+      "instrument": "Vocal",
+      "teacher": "Olivia Roberts",
+      "image": "https://example.com/images/soulful_singing.jpg",
+      "department": "Vocals",
+      "price": 40,
+      "available_seats": 8
+    },
+    {
+      "id": 15,
+      "name": "Rock Drumming Techniques",
+      "instrument": "Drums",
+      "teacher": "Jason Wilson",
+      "image": "https://example.com/images/rock_drumming.jpg",
+      "department": "Percussion",
+      "price": 60,
+      "available_seats": 4
+    },
+    {
+      "id": 16,
+      "name": "Beginner Saxophone Ensemble",
+      "instrument": "Saxophone",
+      "teacher": "Sophia Anderson",
+      "image": "https://example.com/images/beginner_saxophone.jpg",
+      "department": "Woodwinds",
+      "price": 45,
+      "available_seats": 6
+    },
+    {
+      "id": 17,
+      "name": "Chamber Music for Strings",
+      "instrument": "Cello",
+      "teacher": "Jacob Davis",
+      "image": "https://example.com/images/chamber_music.jpg",
+      "department": "Strings",
+      "price": 50,
+      "available_seats": 4
+    },
+    {
+      "id": 18,
+      "name": "Trumpet Solo Performance",
+      "instrument": "Trumpet",
+      "teacher": "Matthew Clark",
+      "image": "https://example.com/images/trumpet_solo.jpg",
+      "department": "Brass",
+      "price": 55,
+      "available_seats": 7
+    },
+    {
+      "id": 19,
+      "name": "Introduction to Jazz Improvisation",
+      "instrument": "Saxophone",
+      "teacher": "Natalie Moore",
+      "image": "https://example.com/images/intro_jazz_saxophone.jpg",
+      "department": "Woodwinds",
+      "price": 50,
+      "available_seats": 5
+    },
+    {
+      "id": 20,
+      "name": "Classical Guitar Repertoire",
+      "instrument": "Guitar",
+      "teacher": "David Thompson",
+      "image": "https://example.com/images/classical_guitar.jpg",
+      "department": "Guitar",
+      "price": 45,
+      "available_seats": 6
+    },
+    {
+      "id": 21,
+      "name": "Vocal Performance Techniques",
+      "instrument": "Vocal",
+      "teacher": "Sophie Martin",
+      "image": "https://example.com/images/vocal_performance.jpg",
+      "department": "Vocals",
+      "price": 40,
+      "available_seats": 5
+    },
+    {
+      "id": 22,
+      "name": "Jazz Drumming Workshop",
+      "instrument": "Drums",
+      "teacher": "James Wilson",
+      "image": "https://example.com/images/jazz_drumming.jpg",
+      "department": "Percussion",
+      "price": 60,
+      "available_seats": 7
+    },
+    {
+      "id": 23,
+      "name": "Flute Ensemble",
+      "instrument": "Flute",
+      "teacher": "Emily Davis",
+      "image": "https://example.com/images/flute_ensemble.jpg",
+      "department": "Woodwinds",
+      "price": 50,
+      "available_seats": 4
+    },
+    {
+      "id": 24,
+      "name": "Classical Piano Repertoire",
+      "instrument": "Piano",
+      "teacher": "Jacob Miller",
+      "image": "https://example.com/images/classical_piano.jpg",
+      "department": "Keyboard",
+      "price": 55,
+      "available_seats": 8
+    },
+    {
+      "id": 25,
+      "name": "Intermediate Violin Ensemble",
+      "instrument": "Violin",
+      "teacher": "Oliver Thompson",
+      "image": "https://example.com/images/intermediate_violin_ensemble.jpg",
+      "department": "Strings",
+      "price": 45,
+      "available_seats": 6
+    },
+    {
+      "id": 26,
+      "name": "Blues Guitar Techniques",
+      "instrument": "Guitar",
+      "teacher": "Sophia Johnson",
+      "image": "https://example.com/images/blues_guitar.jpg",
+      "department": "Guitar",
+      "price": 50,
+      "available_seats": 5
+    },
+    {
+      "id": 27,
+      "name": "Contemporary Vocal Styles",
+      "instrument": "Vocal",
+      "teacher": "Nathan Davis",
+      "image": "https://example.com/images/contemporary_vocal.jpg",
+      "department": "Vocals",
+      "price": 40,
+      "available_seats": 7
+    },
+    {
+      "id": 28,
+      "name": "Latin Percussion Workshop",
+      "instrument": "Drums",
+      "teacher": "Isabella Wilson",
+      "image": "https://example.com/images/latin_percussion.jpg",
+      "department": "Percussion",
+      "price": 60,
+      "available_seats": 4
+    },
+    {
+      "id": 29,
+      "name": "Advanced Saxophone Techniques",
+      "instrument": "Saxophone",
+      "teacher": "William Thompson",
+      "image": "https://example.com/images/advanced_saxophone.jpg",
+      "department": "Woodwinds",
+      "price": 50,
+      "available_seats": 6
+    },
+    {
+      "id": 30,
+      "name": "String Quartet",
+      "instrument": "Cello",
+      "teacher": "Emma Wilson",
+      "image": "https://example.com/images/string_quartet.jpg",
+      "department": "Strings",
+      "price": 55,
+      "available_seats": 4
+    }
+  ]
