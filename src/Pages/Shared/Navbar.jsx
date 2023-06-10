@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const navOption =<>
     <li><Link to='/'>Home</Link></li>
-    <li><Link>Classes</Link></li>
-    <li><Link>Instractor</Link></li>
+    <li><Link to='classes'>Classes</Link></li>
+    <li><Link to='instructor'>Instractor</Link></li>
     <li><Link>DashBoard</Link></li>
     </>
     return (
