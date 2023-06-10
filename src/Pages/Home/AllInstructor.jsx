@@ -9,7 +9,7 @@ const AllInstructor = () => {
     return (
         <div>
             <Helmet><title>Music School || Our Instructor</title></Helmet>
-            <section className='grid md:grid-cols-3 gap-4'>
+            <section className='grid md:grid-cols-3 gap-4 mt-8 mb-16'>
                 { showAll ?
                     instructor.map(item => <AllInstructorCategory
                     key={item.id}

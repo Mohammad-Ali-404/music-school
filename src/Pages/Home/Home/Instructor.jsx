@@ -8,7 +8,10 @@ const Instructor = () => {
     const popular = instructor.filter(teacher => teacher.category === 'popular')
     return (
         <div>
-            <SectionTitle/>
+            <SectionTitle
+            heading={'Meet Best Our Instructor'}
+            subheading={'OUR TEACHERS'}
+            />
             <section className='grid md:grid-cols-2 gap-4 ml-16'>
                 {
                     popular.map(item => <TopInstructorCategory
