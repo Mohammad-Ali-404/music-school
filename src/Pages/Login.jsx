@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 const Login = () => {
     const {signIn} = useContext(AuthContext)
 
@@ -19,6 +20,19 @@ const Login = () => {
         .then(result =>{
             const user = result.user ;
             console.log(user)
+            Swal.fire({
+                title: 'User Login SuccessFul',
+                width: 600,
+                padding: '3em',
+                color: '#716add',
+                background: '#fff url(/images/trees.png)',
+                backdrop: `
+                  rgba(0,0,123,0.4)
+                  url("/images/nyan-cat.gif")
+                  left top
+                  no-repeat
+                `
+              })
         })
         
     }
