@@ -19,7 +19,6 @@ const PopularClass = () => {
                 ]}
                 repeat={Infinity}
                 />
-                
            </div>
            <div className='text-3xl font-bold text-center'>
            <TypeAnimation
