@@ -6,12 +6,14 @@ import 'aos/dist/aos.css';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useCart from '../Hooks/UseCart';
 AOS.init();
 const PopularClassCategory = ({item}) => {
     const {id, image, className, department, available_seats, price, teacher} = item;
     const {user} = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate();
+    const [, refetch] = useCart()
     console.lo
     const handleAddToCart = (item) =>{
         console.log(item)
@@ -27,14 +29,13 @@ const PopularClassCategory = ({item}) => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
+                    refetch()
                     Swal.fire({
-                        title: 'Your selected classes will be added on the cart',
-                                showClass: {
-                                    popup: 'animate__animated animate__fadeInDown'
-                                },
-                                hideClass: {
-                                popup: 'animate__animated animate__fadeOutUp'
-                                }
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your selected class added on the cart',
+                        showConfirmButton: false,
+                        timer: 1500
                       })
                     }
                 })
