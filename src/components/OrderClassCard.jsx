@@ -1,9 +1,58 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import LazyLoad from 'react-lazy-load';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../providers/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const OrderClassCard = ({item}) => {
-    const {className, teacher, image, available_seats, price} = item;
+    const {id, className, teacher, image, department, available_seats, price} = item;
+    const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const handleToCart = item =>{
+        console.log(item)
+        if (user && user.email) {
+          const selectClass = {SelectClassId: id, className, department, price, email: user.email}
+          fetch('http://localhost:5000/carts', {
+              method: "POST",
+              headers:{
+                  "content-type":"application/json"
+              },
+              body:JSON.stringify(selectClass)
+          })
+          .then(res => res.json())
+          .then(data => {
+              if (data.insertedId) {
+                  Swal.fire({
+                      title: 'Custom animation with Animate.css',
+                              showClass: {
+                                  popup: 'animate__animated animate__fadeInDown'
+                              },
+                              hideClass: {
+                              popup: 'animate__animated animate__fadeOutUp'
+                              }
+                    })
+                  }
+              })
+      }
+      else{
+          Swal.fire({
+              title: 'Please Login to Buy the class',
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Login Now'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        navigate('/login', {state: {from: location}})
+                      }
+            
+                  })
+
+      }
+    }
     return (
       <div>
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -21,7 +70,7 @@ const OrderClassCard = ({item}) => {
                 </div>
                
                 <div className="card-actions justify-end">
-                <button className="btn btn-primary">ADD TO CART</button>
+                <button onClick={()=>handleToCart(item)} className="btn btn-primary">ADD TO CART</button>
                 </div>
             </div>
         </div>

@@ -4,12 +4,14 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FcGoogle } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
 const Login = () => {
-    const {signIn} = useContext(AuthContext)
-
+    const {signIn } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathName || '/';
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target;
@@ -33,6 +35,7 @@ const Login = () => {
                   no-repeat
                 `
               })
+              navigate(from, {replace: true})
         })
         
     }
@@ -44,7 +47,7 @@ const Login = () => {
                 <form onSubmit={handleLogin} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label for="email" className="block dark:text-gray-400">Email</label>
-                        <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="password" className="block dark:text-gray-400">Password</label>

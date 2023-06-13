@@ -1,10 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const {
@@ -12,15 +14,31 @@ const Register = () => {
     handleSubmit,
     getValues,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
-  const { createUser } = useContext(AuthContext);
-
+  const { createUser, useProfileUpdate} = useContext(AuthContext);
+  const navigate = useNavigate()
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      useProfileUpdate(data.name, data.photoURL)
+      .then(()=>{
+        console.log('user Profile update')
+        reset()
+      })
+      Swal.fire({
+        title: 'User Created Successful',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
+      navigate('/')
     });
   };
 

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
 const Navbar = () => {
     const {user, logout} = useContext(AuthContext)
     const handleLogut = () =>{
@@ -12,6 +12,14 @@ const Navbar = () => {
     <li><Link to='classes'>Classes</Link></li>
     <li><Link to='instructor'>Instractor</Link></li>
     <li><Link>DashBoard</Link></li>
+    <li className='ml-10 mt-1'>
+        <Link to='/'>
+            <button className="btn btn-sm">
+                <AiOutlineShoppingCart className='text-xl'/>
+                <div className="badge badge-accent">+0</div>
+            </button>
+        </Link>
+    </li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -33,7 +41,10 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 { user ?
-                    <button onClick={handleLogut} className='btn btn-outline'>Logout</button>
+                    <div className='flex'>
+                        <img className="w-12 h-12 rounded-full mr-8" src={user.photoURL} />
+                        <button onClick={handleLogut} className='btn btn-outline'>Logout</button>
+                    </div>
                     :
                     <Link to='login'><button className="btn btn-outline btn-primary">Login</button></Link>
                 }
