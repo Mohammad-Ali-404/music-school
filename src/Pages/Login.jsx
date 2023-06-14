@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FcGoogle } from "react-icons/fc";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
@@ -12,6 +13,10 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathName || '/';
+    const [passwordVisible, setPasswordVisible] = useState(false);
+    const handleToggleVisibility = () => {
+        setPasswordVisible(!passwordVisible);
+      };
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target;
@@ -51,9 +56,9 @@ const Login = () => {
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="password" className="block dark:text-gray-400">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900 focus:dark:border-violet-400" />
+                        <input type={passwordVisible ? 'text' : 'password'} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900 focus:dark:border-violet-400" />
                         <div className="flex justify-end text-xs dark:text-gray-400">
-                            <a rel="noopener noreferrer" href="#">Forgot Password?</a>
+                            <button onClick={handleToggleVisibility} className='text-2xl'> {passwordVisible ? <AiFillEyeInvisible/> : <AiFillEye/>}</button>
                         </div>
                     </div>
                     <button type='submit' className="block w-full p-3 text-center rounded-sm text-gray-900 bg-violet-400">Sign Up</button>

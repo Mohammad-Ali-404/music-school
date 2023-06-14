@@ -15,7 +15,7 @@ const Navbar = () => {
     <li><Link to='instructor'>Instractor</Link></li>
     <li><Link>DashBoard</Link></li>
     <li className='ml-10 mt-1'>
-        <Link to='/'>
+        <Link to='/dashboard/mycart'>
             <button className="btn btn-sm">
                 <AiOutlineShoppingCart className='text-xl'/>
                 <div className="badge badge-accent">+{cart?.length || 0}</div>
