@@ -1,11 +1,65 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-
+import useCart from '../../../Hooks/UseCart'
 const MyCart = () => {
-    return (
+    const [cart] = useCart()
+    const totalPrice = cart.reduce((sum, item )=> item.price + sum, 0)
+    console.log(cart)
+        return (
         <div>
             <Helmet><title>Music School || My Cart</title></Helmet>
-            <h1>My cart</h1>
+            <div className='uppercase text-2xl font-bold flex justify-evenly'>
+                <p>Selected Classes: {cart.length}</p>
+                <p>Total price: {totalPrice}$</p>
+                <button className='btn btn-accent'>Payment</button>
+            </div>
+            <div className="overflow-x-auto">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Classes</th>
+                        <th>Name</th>
+                        <th>Favorite Color</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {/* row 1 */}
+                    <tr>
+                        <th>
+                        <label>
+                            <input type="checkbox" className="checkbox" />
+                        </label>
+                        </th>
+                        <td>
+                        <div className="flex items-center space-x-3">
+                            <div className="avatar">
+                            <div className="mask mask-squircle w-12 h-12">
+                                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                            </div>
+                            </div>
+                            <div>
+                            <div className="font-bold">Hart Hagerty</div>
+                            <div className="text-sm opacity-50">United States</div>
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                        Zemlak, Daniel and Leannon
+                        <br/>
+                        <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                        </td>
+                        <td>Purple</td>
+                        <th>
+                        <button className="btn btn-ghost btn-xs">details</button>
+                        </th>
+                    </tr>
+                    </tbody>
+                    
+                </table>
+                </div>
         </div>
     );
 };

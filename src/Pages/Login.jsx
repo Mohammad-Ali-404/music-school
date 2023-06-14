@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
@@ -6,10 +7,11 @@ import { Helmet } from 'react-helmet-async';
 import { FcGoogle } from "react-icons/fc";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../providers/AuthProvider';
+import AuthProvider, { AuthContext, auth } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { signInWithPopup } from 'firebase/auth';
 const Login = () => {
-    const {signIn, googleSignIn } = useContext(AuthContext)
+    const {signIn, googleProvider } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathName || '/';
@@ -18,7 +20,7 @@ const Login = () => {
         setPasswordVisible(!passwordVisible);
       };
     const handleGoogleSignIn = () =>{
-        googleSignIn()
+        signInWithPopup(auth, googleProvider)
         .then(result =>{
             const loggedUser = result.user;
             const savedUser = {name: loggedUser.displayName, email: loggedUser.email}
@@ -31,10 +33,8 @@ const Login = () => {
             body: JSON.stringify(savedUser)
             })
             .then(res => res.json())
-            .then(data => {
-            if (data.insertedId) { 
+            .then(() => {
                 navigate(from, {replace: true})
-            }
             })
         })
         }

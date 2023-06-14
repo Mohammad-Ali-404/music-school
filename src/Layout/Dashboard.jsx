@@ -16,18 +16,41 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                 {/* Sidebar content here */}
-                <li><NavLink className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
-                    }><AiFillHome/>User Home</NavLink></li>
-                <li><NavLink><BsFillPeopleFill/>Enrolled Classes</NavLink></li>
-                <li><NavLink to="/dashboard/mycart"
-  style={({ isActive, isPending }) => {
-    return {
-      color: isPending ? "bold" : "",
-      backgroundColor: isActive ? "green" : "black",
-    };
-  }}><AiOutlineShoppingCart/>My Selected Classes</NavLink></li>
-                <li><NavLink><AiFillWallet/>Payment History</NavLink></li>
+                <li>
+                    <NavLink to='/dashboard/home' style={({ isActive, isPending }) => {
+                        return {
+                        color: isPending ? "bold" : "",
+                        backgroundColor: isActive ? "green" : "",
+                        };
+                    }}
+                    ><AiFillHome/>User Home</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/dashboard/enrolledclass' style={({ isActive, isPending }) => {
+                        return {
+                        color: isPending ? "bold" : "",
+                        backgroundColor: isActive ? "green" : "",
+                        };
+                    }}><BsFillPeopleFill/>Enrolled Classes</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/dashboard/mycart"
+                    style={({ isActive, isPending }) => {
+                        return {
+                        color: isPending ? "bold" : "",
+                        backgroundColor: isActive ? "green" : "",
+                        };
+                    }}>
+                    <AiOutlineShoppingCart/>My Selected Classes</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/dashboard/history' style={({ isActive, isPending }) => {
+                        return {
+                        color: isPending ? "bold" : "",
+                        backgroundColor: isActive ? "green" : "",
+                        };
+                    }}><AiFillWallet/>Payment History</NavLink>
+                </li>
                 <div className="divider"></div>
                 <li><NavLink><AiFillHome/>Home</NavLink></li>
                 <li><NavLink><AiFillRead/>Our Classes</NavLink></li>
