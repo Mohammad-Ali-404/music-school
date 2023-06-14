@@ -14,7 +14,7 @@ const OrderClassCard = ({item}) => {
         console.log(item)
         if (user && user.email) {
           const selectClass = {SelectClassId: id, className, department, price, email: user.email}
-          fetch('http://localhost:5000/carts', {
+          fetch('https://summer-camp-server-rosy.vercel.app/carts', {
               method: "POST",
               headers:{
                   "content-type":"application/json"

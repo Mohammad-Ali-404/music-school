@@ -8,7 +8,7 @@ const useCart = () =>{
     const {refetch , data: cart = [] } = useQuery({
         queryKey: ['cart', user?.email],
         queryFn: async () =>{
-            const response = await fetch(`http://localhost:5000/carts?email=${user.email}`, {
+            const response = await fetch(`https://summer-camp-server-rosy.vercel.app/carts?email=${user.email}`, {
                 headers:{
                     authorization:`bearer${token}`
                 }
