@@ -9,7 +9,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
 const Login = () => {
-    const {signIn } = useContext(AuthContext)
+    const {signIn, googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathName || '/';
@@ -17,6 +17,27 @@ const Login = () => {
     const handleToggleVisibility = () => {
         setPasswordVisible(!passwordVisible);
       };
+    const handleGoogleSignIn = () =>{
+        googleSignIn()
+        .then(result =>{
+            const loggedUser = result.user;
+            const savedUser = {name: loggedUser.displayName, email: loggedUser.email}
+
+            fetch('http://localhost:5000/users', {
+            method:'POST',
+            headers:{
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(savedUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+            if (data.insertedId) { 
+                navigate(from, {replace: true})
+            }
+            })
+        })
+        }
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target;
@@ -69,7 +90,7 @@ const Login = () => {
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                 </div>
                 <div className="flex justify-center space-x-4">
-                    <button aria-label="Log in with Google" className="text-4xl animate-spin p-3 rounded-sm">
+                    <button onClick={handleGoogleSignIn} aria-label="Log in with Google" className="text-4xl animate-spin p-3 rounded-sm">
                     <FcGoogle/>
                     </button>
                 </div>

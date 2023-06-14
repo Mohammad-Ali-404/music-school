@@ -17,28 +17,43 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const { createUser, useProfileUpdate} = useContext(AuthContext);
+  const { createUser, userProfileUpdate} = useContext(AuthContext);
   const navigate = useNavigate()
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
-      useProfileUpdate(data.name, data.photoURL)
+      userProfileUpdate(data.name, data.photo)
       .then(()=>{
         console.log('user Profile update')
-        reset()
+        const savedUser = {name: data.name, email: data.email}
+        fetch('http://localhost:5000/users', {
+          method:'POST',
+          headers:{
+            'content-type' : 'application/json'
+          },
+          body: JSON.stringify(savedUser)
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.insertedId) {
+            reset()
+            Swal.fire({
+              title: 'User Created Successful',
+              showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              }
+            })
+            navigate('/')
+          }
+        })
+       
       })
-      Swal.fire({
-        title: 'User Created Successful',
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      })
-      navigate('/')
+      
     });
   };
 
