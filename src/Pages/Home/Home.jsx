@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Banner from './Home/Banner';
 import PopularClass from './Home/PopularClass';
 import Instructor from './Home/Instructor';
+import SuccessfulStudent from './Home/SuccessfulStudent';
 
 const Home = () => {
     const lightStyles = {
@@ -25,7 +26,7 @@ const Home = () => {
             <Banner></Banner>
             <PopularClass></PopularClass>
             <Instructor></Instructor>
-            <h1>This is home</h1>
+            <SuccessfulStudent></SuccessfulStudent>
         </div>
     );
 };
