@@ -50,7 +50,7 @@ const Dashboard = () => {
                     
                 </li>
                 <li>
-                    <NavLink to='/dashboard/history' style={({ isActive, isPending }) => {
+                    <NavLink to='/dashboard/allusers' style={({ isActive, isPending }) => {
                         return {
                         color: isPending ? "bold" : "",
                         backgroundColor: isActive ? "green" : "",
