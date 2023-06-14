@@ -2,7 +2,9 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { AiOutlineShoppingCart , AiFillWallet, AiFillHome, AiFillRead } from "react-icons/ai";
 import { BsFillPeopleFill } from "react-icons/bs";
+import useCart from '../Hooks/UseCart';
 const Dashboard = () => {
+    const [cart] = useCart()
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -33,7 +35,7 @@ const Dashboard = () => {
                         };
                     }}><BsFillPeopleFill/>Enrolled Classes</NavLink>
                 </li>
-                <li>
+                <li className='flex'>
                     <NavLink to="/dashboard/mycart"
                     style={({ isActive, isPending }) => {
                         return {
@@ -41,7 +43,8 @@ const Dashboard = () => {
                         backgroundColor: isActive ? "green" : "",
                         };
                     }}>
-                    <AiOutlineShoppingCart/>My Selected Classes</NavLink>
+                    <AiOutlineShoppingCart/>My Selected Classes <div className="badge badge-accent">+{cart?.length || 0}</div></NavLink>
+                    
                 </li>
                 <li>
                     <NavLink to='/dashboard/history' style={({ isActive, isPending }) => {
