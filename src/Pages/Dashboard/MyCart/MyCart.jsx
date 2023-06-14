@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import useCart from '../../../Hooks/UseCart'
+import { AiTwotoneDelete } from "react-icons/ai";
+
 const MyCart = () => {
     const [cart] = useCart()
     const totalPrice = cart.reduce((sum, item )=> item.price + sum, 0)
@@ -21,41 +23,37 @@ const MyCart = () => {
                         <th>#</th>
                         <th>Classes</th>
                         <th>Name</th>
-                        <th>Favorite Color</th>
-                        <th></th>
+                        <th>Price</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {/* row 1 */}
-                    <tr>
+                    {
+                        cart.map((item, index) => <tr
+                        key={item._id}
+                        >
                         <th>
-                        <label>
-                            <input type="checkbox" className="checkbox" />
-                        </label>
+                        {index + 1}
                         </th>
                         <td>
                         <div className="flex items-center space-x-3">
                             <div className="avatar">
-                            <div className="mask mask-squircle w-12 h-12">
-                                <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                            </div>
-                            </div>
-                            <div>
-                            <div className="font-bold">Hart Hagerty</div>
-                            <div className="text-sm opacity-50">United States</div>
+                                <div className="mask mask-squircle w-12 h-12">
+                                    <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                                </div>
                             </div>
                         </div>
                         </td>
-                        <td>
-                        Zemlak, Daniel and Leannon
-                        <br/>
-                        <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                        </td>
-                        <td>Purple</td>
+                        <td>{item.className}</td>
                         <th>
-                        <button className="btn btn-ghost btn-xs">details</button>
+                            {item.price}$
                         </th>
-                    </tr>
+                        <th >
+                            <button className="btn px-2 pb-8 text-slate-200 bg-red-700 text-3xl btn-sm"><AiTwotoneDelete/></button>
+                        </th>
+                    </tr>)
+                    }
+                    
                     </tbody>
                     
                 </table>
